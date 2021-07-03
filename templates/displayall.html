@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Passify</title>
+
+        <style>
+            body {
+            background: linear-gradient(-45deg, #d8623e, #ad224c, #166581, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <br>
+        <h1 style="text-align: center;">Passify</h1>
+        <br><br>
+        
+        <h2 style="text-align: center;">List of Stored passwords</h4><br>
+        
+        <div style="width:800px; margin:0 auto;">
+            <table align="center" cellspacing="20" cellpadding="5">
+                <tr>
+                    <th>Username</th>
+                    <th>Website</th>
+                    <th>Encrypted Password</th>
+                    <th>Decryption</th>
+                </tr>
+
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>
+                            <form action = "/decrypt" method = "POST">
+                                <input type="hidden" name="username" value={{row[1]}}>
+                                <input type="hidden" name="website" value={{row[2]}}>
+                                <input type="hidden" name="passenc" value={{row[3]}}>
+                                <input type="hidden" name="iv" value={{row[4]}}>
+                                <input type="hidden" name="key" value={{row[5]}}>
+                                <input type="hidden" name="type" value={{row[6]}}>
+                                <input type = "submit" value = "Decrypt">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div style="text-align: center;">
+                <button onclick="window.location='/dashboard'" style="text-align: center;">Back to Dashboard</button>
+            </div>
+        </div>
+
+    </body>

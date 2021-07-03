@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Passify</title>
+
+        <style>
+            body {
+            background: linear-gradient(-45deg, #d8623e, #ad224c, #166581, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <br>
+        <h1 style="text-align: center;">Welcome to Passify</h1>
+        <br><br>
+
+        <h3 style="text-align: center;">Choose your desired algorithm: </h3>
+
+
+        <div style="width:250px; margin:0 auto;">
+            <form action="/dashboard" method="POST">
+                <input type="radio" id="AES" name="selection" value=0>
+                <label for="AES">AES</label><br>
+                <input type="radio" id="DES" name="selection" value=1>
+                <label for="female">DES</label><br>
+                <input type="radio" id="other" name="selection" value=10>
+                <label for="other">Other</label><br>
+                <input type = "submit" value="Submit">
+            </form>
+
+            <br><br>
+
+            <h4>Show all saved passwords</h4>
+            <button onclick="window.location='/displayAll'">Display Passwords</button>
+        </div>
+        
+
+    </body>
+</html>

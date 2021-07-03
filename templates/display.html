@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Passify</title>
+
+        <style>
+            body {
+            background: linear-gradient(-45deg, #d8623e, #ad224c, #166581, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <br>
+        <h1 style="text-align: center;">Welcome to Passify</h1>
+        <br><br>
+        
+        <h2 style="text-align: center;">Details stored successfully</h4><br>
+        
+        <div style="width:800px; margin:0 auto;">
+            <table align="center">
+                <tr>
+                    <td><h3 style="text-align: center;">Username:</h3></td>
+                    <td><h3 style="text-align: center;">{{username}}</h3></td>
+                </tr>
+
+                <tr>
+                    <td><h3 style="text-align: center;">Website:</h3></td>
+                    <td><h3 style="text-align: center;">{{website}}</h3></td>
+                </tr>
+
+                <tr>
+                    <td><h3 style="text-align: center;">Password stored:</h3></td>
+                    <td><h3 style="text-align: center;">  {{encrypted}}</h3></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="window.location='/displayAll'">Display Passwords</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </body>
+</html>
